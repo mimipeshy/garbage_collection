@@ -1,4 +1,9 @@
-<%= form_with(model: category) do |form| %>
+<div class="container-fluid col d-flex justify-content-xl-center">
+<div class="card col d-block">
+<h5 class="card-header info-color white-text text-center py-4">
+<strong>CREATE CATEGORY</strong>
+</h5>
+    <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -11,17 +16,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="card-body text-center">
+  <form class="text-center" style="color: #757575;" action="#!">
+    <div class="md-form mt-4">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="md-form mt-4">
     <%= form.label :location %>
     <%= form.text_field :location %>
   </div>
 
-  <div class="field">
+  <div class="md-form mt-4">
     <%= form.label :price %>
     <%= form.number_field :price %>
   </div>
@@ -29,4 +36,9 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  <%= link_to 'Back', categories_path %>
+  </form>
+  </div>
 <% end %>
+</div>
+</div>
