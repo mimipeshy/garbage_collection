@@ -10,69 +10,255 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require_tree .
+ *= require_self
  */
- @import "bootstrap";
-
- input[type=text], input[type=number] {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: teal;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.styled-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-.styled-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-.styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-.styled-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-}
-.nav-item{
-  text-decoration: none;
-  color: black;
-}
+ @import 'bootstrap/scss/bootstrap';
+ @import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+ 
+ html,
+ body,
+ div,
+ span,
+ applet,
+ object,
+ iframe,
+ a,
+ abbr,
+ acronym,
+ address,
+ big,
+ cite,
+ code,
+ del,
+ dfn,
+ em,
+ font,
+ img,
+ ins,
+ kbd,
+ q,
+ s,
+ samp,
+ small,
+ strike,
+ strong,
+ sub,
+ sup,
+ tt,
+ var,
+ dl,
+ dt,
+ dd,
+ ol,
+ ul,
+ li,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ pre,
+ form,
+ fieldset,
+ input,
+ textarea,
+ label,
+ legend,
+ p,
+ blockquote,
+ table,
+ caption,
+ tbody,
+ tfoot,
+ thead,
+ tr,
+ th,
+ td {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-weight: inherit;
+   font-style: inherit;
+   font-size: 100%;
+   font-family: inherit;
+   vertical-align: baseline;
+ }
+ 
+ body {
+   font-family: "poppins-medium", Arial, Helvetica, sans-serif;
+   line-height: 1;
+   color: black;
+   background: white;
+ }
+ 
+ :focus {
+   outline: 0;
+ }
+ 
+ table {
+   border-collapse: collapse;
+   border-spacing: 0;
+ }
+ 
+ caption,
+ th,
+ td {
+   text-align: left;
+   font-weight: normal;
+ }
+ 
+ fieldset,
+ img {
+   border: 0;
+ }
+ 
+ address,
+ caption,
+ cite,
+ code,
+ dfn,
+ em,
+ strong,
+ th,
+ var {
+   font-style: normal;
+   font-weight: normal;
+ }
+ 
+ ol,
+ ul {
+   list-style: none;
+ }
+ 
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ i {
+   font-size: 100%;
+   font-weight: normal;
+   margin-left: 2rem;
+ }
+ 
+ blockquote::before,
+ blockquote::after,
+ q::before,
+ q::after {
+   content: "";
+ }
+ 
+ blockquote,
+ q {
+   quotes: "" "";
+ }
+ 
+ abbr,
+ acronym {
+   order: 0;
+ }
+ 
+ //styling the main page
+ $main-color: #4e443e;
+ $logo-color: #d57934;
+ $font-family: 'Viga', sans-serif;
+ 
+ header {
+   position: absolute;
+   background-color: white;
+   top: 0;
+   left: 0;
+   right: 0;
+   font-family: $font-family;
+ }
+ 
+ nav {
+   font-size: 1rem;
+   font-family: $font-family;
+   display: grid;
+   color: #7a706a;
+   grid-template-columns: repeat(3, 1fr);
+   height: 8vh;
+ 
+   div {
+     display: flex;
+     align-items: center;
+   }
+  .nav-item,
+  li,
+  a{
+   text-decoration: none;
+   color: black;
+   margin-left: 50px;
+ }
+ }
+ 
+ .logo_img,
+ .footer_logo_img {
+   height: 7vh;
+   margin-left: 5px;
+ }
+ 
+ .nav_menu,
+ .footer_rights_container {
+   justify-content: center;
+ }
+ 
+ ul {
+   list-style-type: none;
+ }
+ 
+ a {
+   color: inherit;
+   text-decoration: none;
+ }
+ 
+ a:hover {
+   color: gray;
+   background-color: inherit;
+ }
+ 
+ nav ul,
+ footer ul {
+   display: grid;
+ 
+   li {
+     text-align: center;
+   }
+ }
+ 
+ 
+ 
+ .login_container,
+ .footer_social_container {
+   justify-content: flex-end;
+ }
+ 
+ .nav_login {
+   grid-template-columns: repeat(3, 1fr);
+ }
+ 
+ .footer_rights {
+   grid-template-columns: 0.8fr 1fr 1.6fr;
+ }
+ 
+ .footer_social {
+   grid-template-columns: repeat(4, auto);
+   margin-right: 5px;
+   align-items: center;
+ 
+   i {
+     color: $logo-color;
+     font-size: 0.9rem;
+     margin: 0 5px;
+   }
+ }
+ 
+ .orange_leaf {
+   color: $logo-color;
+ }
